@@ -34,7 +34,7 @@ fn part1(input_nums: &Vec<i32>) {
 fn part2(input_nums: &Vec<i32>) {
     let mut sums: Vec<i32> = Vec::new();
     let mut ndx = 0;
-    for num in input_nums.iter().skip(2) {
+    for num in input_nums {
         sums.push(*num);
         if ndx > 0 {
             sums[ndx-1] += num;
