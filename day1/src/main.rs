@@ -1,4 +1,4 @@
-use std::fs;
+use common;
 
 fn count_increases(nums: &Vec<i32>) -> i32 {
     let mut num_increases: i32 = 0;
@@ -12,20 +12,6 @@ fn count_increases(nums: &Vec<i32>) -> i32 {
     num_increases
 }
 
-fn read_input() -> Vec<i32> {
-    let input_filename = "data/input.txt";
-    let input_data =
-        String::from_utf8(fs::read(input_filename).expect("Unable to open input!")).unwrap();
-    println!("Got text! Size: {}\n", input_data.len());
-
-    let input_nums: Vec<i32> = input_data
-        .lines()
-        .map(|s| s.parse::<i32>().unwrap())
-        .collect();
-    println!("Got lines! Size: {}", input_nums.len());
-    input_nums
-}
-
 fn part1(input_nums: &Vec<i32>) {
     let num_increases = count_increases(input_nums);
     println!("Part1 - Number of increases: {}", num_increases);
@@ -37,10 +23,10 @@ fn part2(input_nums: &Vec<i32>) {
     for num in input_nums {
         sums.push(*num);
         if ndx > 0 {
-            sums[ndx-1] += num;
+            sums[ndx - 1] += num;
         }
         if ndx > 1 {
-            sums[ndx-2] += num;
+            sums[ndx - 2] += num;
         }
         ndx += 1;
     }
@@ -49,7 +35,11 @@ fn part2(input_nums: &Vec<i32>) {
 }
 
 fn main() {
-    let input_nums = read_input();
+    let input_data = common::read_input("data/input-day1.txt");
+    let input_nums: Vec<i32> = input_data
+        .lines()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect();
     part1(&input_nums);
     part2(&input_nums);
 }
