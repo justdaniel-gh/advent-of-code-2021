@@ -7,13 +7,12 @@ pub fn read_input(input_filename: &str) -> String {
     input_data
 }
 
-/*
+#[allow(dead_code)]
 fn print_binary_values(values: &[usize]) {
     for num in values.iter() {
         println!("{:0>12b}", num);
     }
 }
-*/
 
 #[cfg(test)]
 mod tests {
