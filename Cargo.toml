@@ -1,3 +1,12 @@
+[package]
+name = "advent-of-code"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cargo-generate = "^0.11.1"
+argparse = "0.2.2"
+
 [workspace]
 
 members = [
@@ -8,4 +17,5 @@ members = [
     "day4",
     "day5",
     "day6",
+    "day7",
 ]
