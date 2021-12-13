@@ -7,6 +7,15 @@ pub fn read_input(input_filename: &str) -> String {
     input_data
 }
 
+pub fn parse_list_ints_from_file(input_filename: &str) -> Vec<u32> {
+    let data = read_input(input_filename);
+    let int_list: Vec<u32> = data
+        .split(',')
+        .map(|line| line.parse::<u32>().unwrap())
+        .collect();
+    int_list
+}
+
 #[allow(dead_code)]
 fn print_binary_values(values: &[usize]) {
     for num in values.iter() {
