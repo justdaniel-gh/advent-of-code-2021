@@ -55,6 +55,6 @@ mod tests {
     #[test]
     fn check_accum() {
         assert_eq!(accumulate(5 - 1), 10);
-        assert_eq!(accumulate(16 - 5), 10);
+        assert_eq!(accumulate(16 - 5), 66);
     }
 }
