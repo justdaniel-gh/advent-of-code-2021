@@ -1,10 +1,7 @@
 use std::fs;
 
 pub fn read_input(input_filename: &str) -> String {
-    let input_data =
-        String::from_utf8(fs::read(input_filename).expect("Unable to open input!")).unwrap();
-
-    input_data
+    String::from_utf8(fs::read(input_filename).expect("Unable to open input!")).unwrap()
 }
 
 pub fn parse_list_ints_from_file(input_filename: &str) -> Vec<u32> {
